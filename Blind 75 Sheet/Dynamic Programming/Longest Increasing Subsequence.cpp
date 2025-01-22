@@ -22,4 +22,15 @@ int main(){
 
     cout << help(v, 0, -1, dp);
 
+    // Tabulation
+    vector<int> dp2(n, 1);
+    int ans = 0;
+    for(int i=1; i<n; i++){
+        for(int j=0; j<i; j++){
+            if(v[i] > v[j]) dp2[i] = max(dp2[i], dp2[j]+1);
+            ans = max(ans, dp2[i]);
+        }
+    }
+    cout << ans;
+
 }
