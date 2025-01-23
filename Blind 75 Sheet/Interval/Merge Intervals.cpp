@@ -7,6 +7,7 @@ using namespace std;
 int main(){
     vector<vector<int>> v = {{1,3}, {2,6}, {8,10}, {15,18}};
 
+    sort(v.begin(), v.end());
     vector<vector<int>> ans;
     for(auto i : v){
         int st = i[0], end = i[1];
