@@ -16,10 +16,8 @@ public:
             return;
         }
         
-        if(num > left.top())
-            right.push(num);
-        else
-            left.push(num);
+        if(num > left.top()) right.push(num);
+        else left.push(num);
 
         balance();
     }
@@ -38,8 +36,7 @@ public:
     }
     
     double findMedian() {
-        if(left.size() > right.size())
-            return left.top();
+        if(left.size() > right.size()) return left.top();
         else{
             double ans = left.top() + right.top();
             ans = ans / 2;
@@ -49,9 +46,3 @@ public:
     }
 };
 
-/**
- * Your MedianFinder object will be instantiated and called as such:
- * MedianFinder* obj = new MedianFinder();
- * obj->addNum(num);
- * double param_2 = obj->findMedian();
- */
